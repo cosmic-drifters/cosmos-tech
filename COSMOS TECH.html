@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cosmos Tech - Discover innovation, technology and digital solutions.">
+<title>Cosmos Tech | Beyond The Future</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #070b16;
+  --card: #101a2e;
+  --blue: #38bdf8;
+  --purple: #8b5cf6;
+  --white: #ffffff;
+  --muted: #a6b3c8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 88%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background: rgba(7,11,22,.95);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(15px);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-button {
+  background: linear-gradient(90deg,var(--blue),var(--purple));
+  color: white !important;
+  padding: 12px 20px;
+  border-radius: 30px;
+}
+
+.menu-btn {
+  display: none;
+  font-size: 27px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 670px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 80% 40%, #152a50 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, #251b48 0%, transparent 45%),
+    var(--bg);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid rgba(56,189,248,.4);
+  border-radius: 30px;
+  color: var(--blue);
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(43px,7vw,78px);
+  font-weight: 900;
+  line-height: 1.08;
+  max-width: 850px;
+  margin-bottom: 25px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg,#38bdf8,#a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 590px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 25px;
+  border-radius: 9px;
+  font-weight: 700;
+  display: inline-block;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg,var(--blue),var(--purple));
+  color: white;
+}
+
+.btn-outline {
+  border: 1px solid #43516c;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #38bdf830;
+}
+
+/* HERO DECORATION */
+
+.orbit {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border: 1px solid rgba(56,189,248,.18);
+  border-radius: 50%;
+  right: 5%;
+  top: 20%;
+  animation: rotate 20s linear infinite;
+}
+
+.orbit::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--blue);
+  border-radius: 50%;
+  top: 45px;
+  left: 45px;
+  box-shadow: 0 0 25px var(--blue);
+}
+
+.orbit::after {
+  content: "✦";
+  position: absolute;
+  color: #a78bfa;
+  font-size: 40px;
+  right: -10px;
+  bottom: 70px;
+}
+
+.orbit-inner {
+  position: absolute;
+  inset: 60px;
+  border: 1px solid rgba(167,139,250,.25);
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* STATS */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  background: #0c1426;
+  border-top: 1px solid #24304a;
+  border-bottom: 1px solid #24304a;
+}
+
+.stat {
+  text-align: center;
+  padding: 35px 10px;
+  border-right: 1px solid #24304a;
+}
+
+.stat h2 {
+  color: var(--blue);
+  font-size: 32px;
+}
+
+.stat p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* GENERAL SECTIONS */
+
+section.content-section {
+  padding: 100px 0;
+}
+
+.section-label {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-heading {
+  font-size: clamp(30px,5vw,45px);
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* SERVICES */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+  margin-top: 55px;
+}
+
+.service-card {
+  background: linear-gradient(145deg,#111e36,#0b1222);
+  border: 1px solid #253550;
+  padding: 32px;
+  border-radius: 16px;
+  transition: .35s;
+}
+
+.service-card:hover {
+  transform: translateY(-9px);
+  border-color: var(--blue);
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  background: #163451;
+  border-radius: 12px;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.service-card h3 {
+  font-size: 19px;
+  margin-bottom: 13px;
+}
+
+.service-card p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* ABOUT */
+
+.about {
+  background: #0c1426;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--muted);
+  line-height: 1.9;
+  margin: 20px 0;
+}
+
+.about-visual {
+  min-height: 340px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 50% 50%,#244a7a,transparent 50%),
+    linear-gradient(135deg,#101e39,#20153d);
+  display: grid;
+  place-items: center;
+  border: 1px solid #34476a;
+  font-size: 100px;
+}
+
+/* PROJECTS */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+  margin-top: 50px;
+}
+
+.project-card {
+  background: #101a2e;
+  border: 1px solid #273550;
+  border-radius: 15px;
+  padding: 30px;
+  transition: .3s;
+}
+
+.project-card:hover {
+  border-color: var(--purple);
+  transform: translateY(-7px);
+}
+
+.project-number {
+  font-size: 13px;
+  color: var(--blue);
+  margin-bottom: 22px;
+}
+
+.project-card h3 {
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+  background: #0c1426;
+}
+
+.contact-box {
+  max-width: 650px;
+  margin: 45px auto 0;
+  background: #101a2e;
+  border: 1px solid #273550;
+  padding: 35px;
+  border-radius: 16px;
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 16px;
+  background: #080f20;
+  border: 1px solid #34435f;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+  border-color: var(--blue);
+}
+
+.contact-box button {
+  width: 100%;
+  border: none;
+}
+
+#form-message {
+  color: var(--blue);
+  margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 0;
+  background: #050811;
+  border-top: 1px solid #26334c;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .orbit { opacity: .3; right: -200px; }
+  .services-grid,.project-grid { grid-template-columns: repeat(2,1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+@media(max-width:600px) {
+  header { height: 70px; }
+  .menu-btn { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: #0b1427;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .nav-links.show { display: flex; }
+  .services-grid,.project-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
+  .stat { border-right: none; border-bottom: 1px solid #24304a; }
+  .contact-box { padding: 20px; }
+  .hero { min-height: 600px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">COSMOS<span>TECH.</span></a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="nav-button">Get In Touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="tag">WELCOME TO THE FUTURE</div>
+
+    <h1>
+      Technology That<br>
+      <span class="gradient-text">Moves The World.</span>
+    </h1>
+
+    <p>
+      Welcome to Cosmos Tech. We explore innovation,
+      develop creative digital solutions and bring
+      tomorrow's technology closer to today.
+    </p>
+
+    <div class="buttons">
+      <a href="#services" class="btn btn-primary">Explore Services →</a>
+      <a href="#about" class="btn btn-outline">Discover Cosmos</a>
+    </div>
+  </div>
+
+  <div class="orbit">
+    <div class="orbit-inner"></div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat">
+    <h2>01</h2>
+    <p>INNOVATION FIRST</p>
+  </div>
+  <div class="stat">
+    <h2>24/7</h2>
+    <p>IDEAS WITHOUT LIMITS</p>
+  </div>
+  <div class="stat">
+    <h2>∞</h2>
+    <p>POSSIBILITIES</p>
+  </div>
+</div>
+
+<section class="content-section" id="services">
+  <div class="container">
+    <p class="section-label">WHAT WE DO</p>
+    <h2 class="section-heading">Our Technology Services</h2>
+    <p class="section-subtitle">
+      Creative technology solutions designed to explore
+      opportunities and support digital growth.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="icon">💻</div>
+        <h3>Web Development</h3>
+        <p>Beautiful, responsive and modern websites
+        for businesses and individuals.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">📱</div>
+        <h3>App Development</h3>
+        <p>Creative application concepts designed
+        to make everyday tasks easier.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🤖</div>
+        <h3>Artificial Intelligence</h3>
+        <p>Exploring intelligent technologies and
+        the possibilities of automation.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🔐</div>
+        <h3>Cybersecurity</h3>
+        <p>Understanding online safety, privacy
+        and digital protection.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">☁️</div>
+        <h3>Cloud Technology</h3>
+        <p>Exploring connected systems and
+        modern digital infrastructure.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🚀</div>
+        <h3>Digital Innovation</h3>
+        <p>Turning creative ideas into useful
+        digital experiences.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="content-section about" id="about">
+  <div class="container about-grid">
+
+    <div class="about-text">
+      <p class="section-label">WHO WE ARE</p>
+      <h2 class="section-heading">Beyond Technology. Beyond Limits.</h2>
+
+      <p>
+        Cosmos Tech is a technology brand built around
+        creativity, curiosity and innovation.
+      </p>
+
+      <p>
+        We believe the future belongs to people who
+        explore new ideas, develop digital skills and
+        use technology to solve real-world challenges.
+      </p>
+
+      <a href="#contact" class="btn btn-primary">Connect With Us →</a>
+    </div>
+
+    <div class="about-visual">🌌</div>
+
+  </div>
+</section>
+
+<section class="content-section" id="projects">
+  <div class="container">
+    <p class="section-label">OUR WORK</p>
+    <h2 class="section-heading">Featured Projects</h2>
+    <p class="section-subtitle">
+      A collection of concepts representing the
+      creative direction of Cosmos Tech.
+    </p>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="project-number">PROJECT 01</div>
+        <h3>Nova Web</h3>
+        <p>A modern website concept for digital businesses.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">PROJECT 02</div>
+        <h3>Galaxy App</h3>
+        <p>A concept for a connected mobile experience.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">PROJECT 03</div>
+        <h3>Future AI</h3>
+        <p>An exploration of intelligent digital tools.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="content-section contact" id="contact">
+  <div class="container">
+    <p class="section-label">LET'S CONNECT</p>
+    <h2 class="section-heading">Have an Idea?</h2>
+    <p class="section-subtitle">
+      Tell us what you are thinking about.
+      Let's explore possibilities together.
+    </p>
+
+    <form class="contact-box" id="contactForm">
+      <input type="text" placeholder="Your name" required>
+      <input type="email" placeholder="Your email" required>
+      <textarea rows="5" placeholder="Your message..." required></textarea>
+      <button class="btn btn-primary" type="submit">
+        Send Message →
+      </button>
+      <p id="form-message"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <a href="#home" class="logo">COSMOS<span>TECH.</span></a>
+    <p>© 2026 Cosmos Tech. All rights reserved.</p>
+    <p>Innovation Beyond Imagination.</p>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  });
+});
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  document.getElementById("form-message").textContent =
+    "Thank you! This is a demo form. Connect an email service to receive messages.";
+
+  this.reset();
+});
+</script>
+
+</body>
+</html>
